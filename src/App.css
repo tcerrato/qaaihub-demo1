@@ -15,15 +15,67 @@ header {
   margin-bottom: 3rem;
 }
 
-header h1 {
+/* QA AI Depot Branding */
+.brand-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 32px rgba(102, 126, 234, 0.2);
+}
+
+.qa-ai-depot-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: bold;
+}
+
+.logo-icon {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.brand-name {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.brand-tagline {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+/* Demo Title Section */
+.demo-title-section {
+  margin-top: 1rem;
+}
+
+.demo-title-section h1 {
   color: #2c3e50;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   margin-bottom: 0.5rem;
 }
 
-header p {
+.demo-title-section p {
   color: #7f8c8d;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 .demo-container {
@@ -418,5 +470,27 @@ header p {
 
   .curl-example code {
     font-size: 0.7rem;
+  }
+
+  /* Mobile Branding Styles */
+  .brand-header {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .brand-name {
+    font-size: 1.5rem;
+  }
+
+  .brand-tagline {
+    font-size: 0.85rem;
+  }
+
+  .demo-title-section h1 {
+    font-size: 1.8rem;
+  }
+
+  .demo-title-section p {
+    font-size: 1rem;
   }
 }

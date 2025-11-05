@@ -111,8 +111,19 @@ function App() {
   return (
     <div className="app" style={{ backgroundColor: backgroundColor }}>
       <header>
-        <h1>React Demo App</h1>
-        <p>Interactive Components Showcase</p>
+        <div className="brand-header">
+          <div className="qa-ai-depot-brand">
+            <div className="brand-logo">
+              <span className="logo-icon">QA</span>
+              <span className="brand-name">AI Depot</span>
+            </div>
+            <div className="brand-tagline">Quality Assurance & Automation Excellence</div>
+          </div>
+        </div>
+        <div className="demo-title-section">
+          <h1>UI & REST API Automation Demo</h1>
+          <p>Interactive Components Showcase - Perfect for Training & Testing</p>
+        </div>
       </header>
 
       <main>
