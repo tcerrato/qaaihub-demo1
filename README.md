@@ -38,7 +38,7 @@ npm install
 ```bash
 npm run dev:full
 ```
-This starts both the frontend (port 5173) and backend API server (port 3001) simultaneously.
+This starts both the frontend (port 3000) and backend API server (port 3001) simultaneously.
 
 **Option 2: Run Servers Separately**
 ```bash
@@ -50,7 +50,7 @@ npm run dev
 ```
 
 ### Access the Application
-- **Frontend**: http://localhost:5173
+- **Frontend**: http://localhost:3000
 - **API Server**: http://localhost:3001
 - **Health Check**: http://localhost:3001/api/health
 
