@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3005;
 
 // Middleware
 app.use(cors());
@@ -118,14 +118,14 @@ app.get('/api/health', (req, res) => {
 
 // Start server
 app.listen(PORT, () => {
-  console.log('🚀 Local REST API Server running on http://localhost:3001');
+  console.log(`🚀 Local REST API Server running on http://localhost:${PORT}`);
   console.log('📋 Available endpoints:');
-  console.log('   GET    http://localhost:3001/api/posts');
-  console.log('   GET    http://localhost:3001/api/posts/:id');
-  console.log('   POST   http://localhost:3001/api/posts');
-  console.log('   PUT    http://localhost:3001/api/posts/:id');
-  console.log('   DELETE http://localhost:3001/api/posts/:id');
-  console.log('   GET    http://localhost:3001/api/health');
+  console.log(`   GET    http://localhost:${PORT}/api/posts`);
+  console.log(`   GET    http://localhost:${PORT}/api/posts/:id`);
+  console.log(`   POST   http://localhost:${PORT}/api/posts`);
+  console.log(`   PUT    http://localhost:${PORT}/api/posts/:id`);
+  console.log(`   DELETE http://localhost:${PORT}/api/posts/:id`);
+  console.log(`   GET    http://localhost:${PORT}/api/health`);
   console.log('');
   console.log('🤖 Perfect for automation tools - all changes appear instantly in your React app!');
 });

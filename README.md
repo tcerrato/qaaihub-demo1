@@ -11,7 +11,7 @@ A comprehensive demo application showcasing **both UI automation and REST API au
 - **Responsive Design**: Works on desktop and mobile devices for cross-platform automation testing
 
 ### Backend API Server (Express.js)
-- **Local REST API**: Real endpoints running on `localhost:3001`
+- **Local REST API**: Real endpoints running on `localhost:3005` (override with `PORT` if needed)
 - **In-Memory Storage**: Data persists during session, resets on server restart
 - **Full CRUD Operations**: GET, POST, PUT, DELETE endpoints
 - **CORS Enabled**: Frontend can communicate with backend seamlessly
@@ -38,7 +38,7 @@ npm install
 ```bash
 npm run dev:full
 ```
-This starts both the frontend (port 3000) and backend API server (port 3001) simultaneously.
+This starts both the frontend (port 3000) and backend API server (port 3005 by default, set `PORT` to override) simultaneously.
 
 **Option 2: Run Servers Separately**
 ```bash
@@ -51,8 +51,8 @@ npm run dev
 
 ### Access the Application
 - **Frontend**: http://localhost:3000
-- **API Server**: http://localhost:3001
-- **Health Check**: http://localhost:3001/api/health
+- **API Server**: http://localhost:3005
+- **Health Check**: http://localhost:3005/api/health
 
 ## 🔧 API Endpoints
 
@@ -60,12 +60,12 @@ The local REST API provides the following endpoints:
 
 | Method | Endpoint | Description | Example |
 |--------|----------|-------------|---------|
-| GET | `/api/posts` | Fetch all posts | `curl http://localhost:3001/api/posts` |
-| GET | `/api/posts/:id` | Fetch specific post | `curl http://localhost:3001/api/posts/1` |
+| GET | `/api/posts` | Fetch all posts | `curl http://localhost:3005/api/posts` |
+| GET | `/api/posts/:id` | Fetch specific post | `curl http://localhost:3005/api/posts/1` |
 | POST | `/api/posts` | Create new post | See examples below |
 | PUT | `/api/posts/:id` | Update existing post | See examples below |
-| DELETE | `/api/posts/:id` | Delete post | `curl -X DELETE http://localhost:3001/api/posts/1` |
-| GET | `/api/health` | Server health check | `curl http://localhost:3001/api/health` |
+| DELETE | `/api/posts/:id` | Delete post | `curl -X DELETE http://localhost:3005/api/posts/1` |
+| GET | `/api/health` | Server health check | `curl http://localhost:3005/api/health` |
 
 ## 🧪 Testing with Automation Tools
 
@@ -73,30 +73,30 @@ The local REST API provides the following endpoints:
 
 **Fetch Posts:**
 ```bash
-curl -X GET "http://localhost:3001/api/posts?_limit=5"
+curl -X GET "http://localhost:3005/api/posts?_limit=5"
 ```
 
 **Create Post:**
 ```bash
-curl -X POST "http://localhost:3001/api/posts" \
+curl -X POST "http://localhost:3005/api/posts" \
   -H "Content-Type: application/json" \
   -d '{"title":"Automation Test","body":"Created via API!","userId":1}'
 ```
 
 **Update Post:**
 ```bash
-curl -X PUT "http://localhost:3001/api/posts/1" \
+curl -X PUT "http://localhost:3005/api/posts/1" \
   -H "Content-Type: application/json" \
   -d '{"title":"Updated Title","body":"Updated via API!"}'
 ```
 
 **Delete Post:**
 ```bash
-curl -X DELETE "http://localhost:3001/api/posts/1"
+curl -X DELETE "http://localhost:3005/api/posts/1"
 ```
 
 ### Postman/Insomnia
-1. Import the endpoints using the base URL: `http://localhost:3001/api`
+1. Import the endpoints using the base URL: `http://localhost:3005/api`
 2. Set Content-Type header to `application/json` for POST/PUT requests
 3. Use JSON body format for creating/updating posts
 
@@ -127,7 +127,7 @@ driver.findElement(By.xpath("//button[contains(text(), 'Update Name')]")).click(
 **Playwright - API + UI Combo:**
 ```javascript
 // Make API call and verify UI updates
-const response = await page.request.post('http://localhost:3001/api/posts', {
+const response = await page.request.post('http://localhost:3005/api/posts', {
   data: {
     title: 'Playwright Test',
     body: 'Created by automation',
@@ -212,7 +212,7 @@ vscodedemo1/
 3. Perfect for showing browser automation capabilities
 
 ### Scenario 2: REST API Testing
-1. Use Postman/cURL to interact with localhost:3001/api endpoints
+1. Use Postman/cURL to interact with localhost:3005/api endpoints
 2. Create, read, update, delete posts via API calls
 3. Watch the web app table update in real-time
 4. Demonstrate pure API automation without UI interaction
